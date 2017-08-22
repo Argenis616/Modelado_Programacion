@@ -1,4 +1,4 @@
-package Poyecto01.Proyecto.Modelado_Programacion;
+//package Poyecto01.Proyecto.Modelado_Programacion;
 /**<p>Clase Calendario aqui diseñaremos un calendario Tonalpohualli</p>
  * Este calendario se denota por dias meses y años
  */
@@ -25,7 +25,7 @@ public class Calendario{
 			}else{
 				error = false;
 			}
-	
+
 	}
 	/**Metodo para calcular el dia juliano
 	 *@param añojuliano primer entrada para conocer la fecha juliana.
@@ -39,7 +39,7 @@ public class Calendario{
 		 int mesJuliano;
 		 int diaJuliano;
 		 int varAux;
-		 
+
 		 diaJuliano = (14-mes)/12;
 		 añoJuliano = año + 4800 -diaJuliano;
 		 mesJuliano = mes + (12*diaJuliano - 3);
@@ -47,7 +47,7 @@ public class Calendario{
 			 varAux = dia +((153 * mesJuliano + 2) / 5) + (365 * añoJuliano) + (añoJuliano/4) - (añoJuliano/100) + (añoJuliano/400) - 32045;
 		 }else{
 			 varAux = dia +((153 * mesJuliano + 2) / 5) + (365 * añoJuliano) + (añoJuliano/4) - 32083;
-		 
+
 		 }
 		 return varAux;
 	 }
@@ -70,7 +70,7 @@ public class Calendario{
 		   int aux2;
 		   aux2 = ((Math.floorMod(diaMayaS, 20) + 20) % 20) < 0 ? ((Math.floorMod(diaMayaS, 20) + 20) % 20) + 20 : (Math.floorMod(diaMayaS, 20) + 20) % 20;
 		   return aux2;
-	   
+
 	   }
 	   /**Método para regresar el año en el clendario maya
 	    *@return regresa el año en maya.
@@ -189,24 +189,23 @@ public class Calendario{
 			  }
 			  switch(getAsignoMaya()){
 				  case 0 :
-					españolAño = "";
-					nahuatlAño = "";
+					españolAño = "Casa";
+					nahuatlAño = "Calli";
 					break;
 				case 1 :
-					españolAño = "";
-					nahuatlAño = "";
+					españolAño = "Conejo";
+					nahuatlAño = "Tochtli";
 					break;
 				case 2 :
-					españolAño = "";
-					nahuatlAño = "";
+					españolAño = "Caña";
+					nahuatlAño = "Ácatl";
 					break;
 				case 3 :
-					españolAño = "";
-					nahuatlAño = "";
+					españolAño = "Pedernal";
+					nahuatlAño = "Técpatl";
 					break;
 			  }
 			  s+= String.format("Día %d-%s del año %d-%s o %d-%s, %d-%s", getDiaCalendarioM(), españolDia, getAnoClendarioM(), españolAño, getDiaCalendarioM(), nahuatlDia, getAnoClendarioM(), nahuatlAño);
 		 return s;
 		  }
 }
-

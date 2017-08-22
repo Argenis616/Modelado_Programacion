@@ -1,9 +1,9 @@
-package Poyecto01.Proyecto.Modelado_Programacion;
+//package Poyecto01.Proyecto.Modelado_Programacion;
 import java.io.*;
 /**Main de java aqui se introduce los metodos del programa y el como seran ejecutados
  * */
 public class Proyecto1 {
-	
+
 	public static void main (String args[]) {
 		int dia= 0;
 		int mes= 0;
@@ -21,7 +21,7 @@ public class Proyecto1 {
 		} catch (IOException e) {
 			System.out.println("La fecha que deseas ingresar no es valida");
 		}
-		
+
 		String slash= "[/]+";
 		String[] fechaSplit= fecha.split(slash);
 		if (fechaSplit.length < 3) {
@@ -37,52 +37,52 @@ public class Proyecto1 {
 		String mesaux= fechaSplit[1].toLowerCase();
 		if ( mesaux.length()== 3 ) {
 			switch(mesaux) {
-				case "Ene":
+				case "ene":
 					 mes= 1;
 					 break;
-				case "Feb":
+				case "feb":
 					 mes= 2;
 					 break;
-				case "Mar":
+				case "mar":
 					 mes= 3;
 					 break;
-				case "Abr":
+				case "abr":
 					 mes= 4;
 					 break;
-				case "May":
+				case "may":
 					 mes= 5;
 					 break;
-				case "Jun":
+				case "jun":
 					 mes= 6;
 					 break;
-				case "Jul":
+				case "jul":
 					 mes= 7;
 					 break;
-				case "Ago":
+				case "ago":
 					 mes= 8;
 					 break;
-				case "Sep":
+				case "sep":
 					 mes= 9;
 					 break;
-				case "Oct":
+				case "oct":
 					 mes= 10;
 					 break;
-				case "Nov":
+				case "nov":
 					 mes= 11;
 					 break;
-				case "Dic":
+				case "dic":
 					 mes= 12;
 					 break;
 			}
 		} else {
 			for (int i= 0; i < meses.length; i++) {
-				if (meses[i].equals(mesaux)) { 
+				if (meses[i].equals(mesaux)) {
 					mes= (i + 1);
 					break;
 				}
 			}
 		}
-		if (mes== 0) {
+		if (mes == 0) {
 			System.err.println("ERROR Mes no valido");
 			return;
 		}
@@ -100,4 +100,3 @@ public class Proyecto1 {
 		System.out.println(calendario.getSigno());
 	}
 }
-
