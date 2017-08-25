@@ -3,6 +3,7 @@
 #include <gmp.h>// nos permite jugar con numeros muy grandes
 
 /**
+* @author Hiram Ehecatl Lujano Pastrana, Hernández Chávez Jorge Argenis, Hurtado Gutiérrez Marco Antonio
 * Para compilar y ejecutar se necesita la biblioteca gmp 6.1.2 instalada
 * y se compila con el siguiente comando
 *
@@ -18,7 +19,7 @@
 *
 * si estas en una distribucion de Windows
 *
-* El programa no acepta n = r ni numeros inferiores a 2 por problemas causados por "gmp"
+* El programa acepta entradas a partir de n > 1, r > 1 y n >= r
 */
 
 mpz_t r;// la usaremos para almacenar el resultado de un factorial
@@ -44,12 +45,12 @@ void main()
 	int a, b;
 	printf("Introduce n y r separados por un espacio: \n");
 	scanf(" %d %d", &a, &b);
-
-	if (a < b || a <= 0 || b <= 0 || a == b)
+	if (a < b || a < 2 || b < 2)
 	{
       	printf("No introdujiste una entrada valida\n");
+	}else if(a == b) {
+		printf("Resultado: 1\n");
 	}else {
-
 		mpz_init(r);//inicializamos "r"
 
 		mpz_t facA;
@@ -72,5 +73,6 @@ void main()
 		mpz_clear(facA_B);
 		mpz_clear(facB);
 		mpz_clear(r);
+		
 	}
 }
