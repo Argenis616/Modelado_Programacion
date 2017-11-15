@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Semanal06}
+\author{Hernández Chávez Jorge Argenis }
+\date{November 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Algoritmo y pseudocodigo de Ray Tracing}
+este es un algoritmo que se usa en la industria d elos videojuegos o peliculas con efectos especiales.\\
+Algoritmo:\\
+"Como entradas del algoritmo estarían la posición y características físicas de cada uno de los objetos que forman la escena. Seguiría la ubicación, intensidad y tipo de las fuentes de luz presentes en la misma. Después el modelo de iluminación a utilizar, que describiría como calcular el color en un punto de la superficie de un objeto. A continuación la posición y dirección desde la que se quiere representar la escena, es decir, la posición del observador. Y en último lugar la ubicación y dimensiones del plano de proyección sobre el que ha de quedar reflejada la imagen, que normalmente equivale a la pantalla del ordenador donde se verá finalmente el resultado.\\
+
+El proceso básico se basa en trazar un rayo a través de cada uno de los pixeles del plano de proyección, tomando como origen de los rayos la posición del observador. Y para cada uno de estos rayos trazados estudiar si se produce una intersección con alguno de los objetos de la escena. Si no se encuentra ningún objeto se termina el proceso para ese píxel y se le asigna un color de fondo por defecto. Por el contrario, si se encuentra un objeto, se miran sus características físicas y se decide que hacer en función del modelo de iluminación.\\
+
+En la práctica, todos los elementos que intervienen en el proceso se tratan como entidades matemáticas muy simples. Los objetos se definen mediante primitivas geométricas como esferas, planos o polígonos, aunque se tiende a utilizar mallas de triángulos ya que así funcionan la mayoría de programas de modelado actuales. Los rayos se tratan como vectores, con un punto de origen y una dirección de propagación. Y por tanto, el cálculo de intersecciones entre rayos y objetos se reduce a la resolución de ecuaciones en las que intervienen vectores y primitivas."\footnote{Cita del link mostrado en referencias}
+
+\begin{tabular}{|c|}
+\hline 
+\begin{lstlisting}
+    For píxel in pantalla (tam_img)\\
+    \{
+        Rayo r = rayo desde el píxel.\\
+        Color Pixel = Ray_Trace (r);\\
+    \}\\
+    Color Ray_Trace(Rayo r)\\
+    \{\\
+        Interse inter_cercana;\\
+        Objt obj;\\
+        //Var intersección\\
+        //Var obj.\\
+        for i in escena \{\\
+            inter_cercana = Calcular la intersección (si hay);\\
+            if(intersección)\\
+                return RTColor(inter_cercana, obj);\\
+            else\\
+                return negro;\\
+        \}\\
+    \}\\
+    Color RTColor(Intersección i, Objeto obj)\\
+    \{\\
+        for luz determinar si ilumina o no la intersección.\\
+        color = color del objeto;\\
+        if objeto refleja\\
+            color_reflejado = cte.reflexión * Ray_Trace(rayo reflejado);\\
+        if objeto transparente\\
+            color_refractado = cte.refracción * Ray_Trace(rayo refractado);\\
+        return (combina_colores(color, color_reflejado, color_refractado));\\
+    \}\\
+\end{lstlisting}
+ \tabularnewline
+\hline 
+\end{tabular}
+
+\section{Algoritmo}
+\begin{enumerate}
+\item ``Algoritmo'' https://www.ecured.cu/Raytracing
+\end{enumerate}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
+
